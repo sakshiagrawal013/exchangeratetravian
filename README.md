@@ -1,8 +1,12 @@
-# laravel-lumen-docker
-Laravel, Lumen platform dockerization
+# Exchange Rate Service
+Exchange Rate Service Based On Lumen platform dockerization
+
+## About Project
+Our shops store all product prices in EUR. We need to show the players the prices in their local currency.    
+To archive this we need to create a service to take care of currency exchange rates.
 
 ## Start environment
-To start docker environment, you must install [Docker](https://www.docker.com/get-started) and digit this command in your favorite terminal:
+To start docker environment, you must install Docker and digit this command in your favorite terminal:
 ```sh
 make docker-start
 ```
@@ -14,19 +18,34 @@ To stop your environment you must digit this command in your favorite terminal:
 make docker-stop
 ```
 
-## Customization
-Currently in the "lumen" folder you will find the dist 8.X of Lumen but if you want to customize the dist or use Laravel you can manually configure the docker-compose.yml file indicating where the code of your app resides
+## To run the PHPUnit Test 
+```sh
+make tests
+```
 
-## Debugger
-If you use PhpStorm you must configure your IDE:
-- open `Preferences | Languages & Frameworks | PHP | Servers`
-- add new server named `localhost`
-- set host to `localhost`
-- set port to `8181`
-- enable `use path mapping`
-- configure your absolute path
-- your Lumen/Laravel app root => `/var/www`
-- your Lumen/Laravel app /app root => `/var/www/app`
-- your Lumen/Laravel app /public root => `/var/www/public`
-- open `Preferences | Languages & Frameworks | PHP` => `CLI interpreter`
-- add new CLI from Docker => `docker_php:latest`
+## To Fetch Exchange Rate Service by Command Line
+```sh
+make fetch-exchange-rates
+```
+
+
+## Classes which are involved
+# ExchangeRate Utility Class
+```sh
+App\Utility\ExchangeRateUtility
+```
+
+# ExchangeRate Value Object Class for entity
+```sh
+App\Models\ValueObjects\ExchangeRate
+```
+
+# ExchangeRate Command Class
+```sh
+App\Console\Commands\ExchangeRate
+```
+
+# Unit Test Class
+```sh
+Tests\Unit\ExchangeRateTest
+```
