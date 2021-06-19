@@ -10,26 +10,25 @@ To start docker environment, you must install Docker and digit this command in y
 ```sh
 make docker-start
 ```
-When the process finished you can open your browser and digit http://localhost:8181 to se you app works!
-
-## Stop environment
-To stop your environment you must digit this command in your favorite terminal:
+When the process finished, Run below command and get into container working dir i.e /var/www
 ```sh
-make docker-stop
+make docker-ssh
 ```
 
-## To run the PHPUnit Test 
+Then run below command into container
 ```sh
-make tests
+composer install
 ```
+make exit from container.
+
 
 ## To Fetch Exchange Rate Service by Command Line
 ```sh
 make fetch-exchange-rates
 ```
 
-
 # Classes which are involved
+
 ### ExchangeRate Utility Class
 ```sh
 App\Utility\ExchangeRateUtility
@@ -48,4 +47,16 @@ App\Console\Commands\ExchangeRate
 ### Unit Test Class
 ```sh
 Tests\Unit\ExchangeRateTest
+```
+
+
+## To run the PHPUnit Test
+```sh
+make tests
+```
+
+## Stop environment
+To stop your environment you must digit this command in your favorite terminal:
+```sh
+make docker-stop
 ```
