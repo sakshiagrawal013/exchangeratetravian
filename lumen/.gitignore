@@ -3,3 +3,5 @@
 Homestead.json
 Homestead.yaml
 .env
+tools/php-cs-fixer
+.php-cs-fixer.cache

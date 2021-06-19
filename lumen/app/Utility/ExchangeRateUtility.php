@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 
 class ExchangeRateUtility
 {
-    const CURRENCY_NAMES = [
+    public const CURRENCY_NAMES = [
         'EUR' => 'Euro',
         'USD' => 'US DOLLAR',
         'GBP' => 'Pounds Sterling',
@@ -29,7 +29,9 @@ class ExchangeRateUtility
     public function getResult(): Collection
     {
         $response = $this->curlRequest();
-        if (!$response) return collect();
+        if (!$response) {
+            return collect();
+        }
 
         return $this->getResponse($response);
     }
@@ -48,7 +50,7 @@ class ExchangeRateUtility
 
         $rates = array_filter(
             $response['rates'],
-            fn($key) => in_array($key, config('exchange.rate.allowed_currency')),
+            fn ($key) => in_array($key, config('exchange.rate.allowed_currency')),
             ARRAY_FILTER_USE_KEY
         );
 

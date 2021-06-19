@@ -58,6 +58,4 @@ final class ExchangeRate
     {
         return round($amount * $this->getRate(), 2);
     }
-
-
 }
