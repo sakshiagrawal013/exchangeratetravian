@@ -29,23 +29,23 @@ make fetch-exchange-rates
 ```
 
 
-## Classes which are involved
-# ExchangeRate Utility Class
+# Classes which are involved
+### ExchangeRate Utility Class
 ```sh
 App\Utility\ExchangeRateUtility
 ```
 
-# ExchangeRate Value Object Class for entity
+### ExchangeRate Value Object Class for entity
 ```sh
 App\Models\ValueObjects\ExchangeRate
 ```
 
-# ExchangeRate Command Class
+### ExchangeRate Command Class
 ```sh
 App\Console\Commands\ExchangeRate
 ```
 
-# Unit Test Class
+### Unit Test Class
 ```sh
 Tests\Unit\ExchangeRateTest
 ```
